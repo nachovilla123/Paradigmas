@@ -1,0 +1,56 @@
+object pepita{
+
+var energia = 100
+
+method vola(kilometros){
+energia = energia - kilometros * 2
+}
+
+method come(gramos){
+    energia = energia + gramos * 10
+}
+
+method energia() = energia
+
+}
+
+object emilia {
+    method entrena(ave){
+        ave.come(5)
+        ave.vola(5)
+        ave.come(5)
+    }
+}
+
+object pepote{
+    var volando = 0
+    var comido = 0
+
+    method vola(kilometros){
+        volando = volando + kilometros
+    }   
+    
+    method come(gramos) {
+        comido = comido + gramos
+    }
+    
+    method energia() = 255 + comido * 2 - volando / 5
+
+}
+
+object ramiro {
+
+    var property horasDormidas = 8   
+    
+    // EL VAR PROPERTY ME AHORRA HACER TODO ESTO DE ABAJO:
+    //method horasDormidas() = horasDormidas
+    //method horasDormidas(horas) { horasDormidas = horas}
+
+    method estaDeBuenHumor() = horasDormidas >= 8
+
+    method entrena(ave) {
+        const distancia = if(self.estaDeBuenHumor()) 15 else 30
+        ave.vola(distancia)
+    }
+}
+
